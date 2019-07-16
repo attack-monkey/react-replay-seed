@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { dispatch, goto } from 'react-replay'
-import { safe } from 'react-replay/safe.function'
 
 const counterEngine = (active, greeting) => {
   return greeting === 'Sup World' && !active
@@ -12,8 +11,8 @@ const counterEngine = (active, greeting) => {
 
 export const firstComponent = ({ state }) => {
   counterEngine(
-    safe(state, ['counterEngine', 'active']),
-    safe(state, ['greeting'])
+    state && state.counterEngine && state.counterEngine.active,
+    state && state.greeting
   )
   return (
     <div>
