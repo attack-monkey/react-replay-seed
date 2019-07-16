@@ -1,12 +1,12 @@
 import { exception } from '../utils/exception.function'
-import { greetingReducer } from './greeting/greeting.reducer'
-import { counterEngineReducer } from './counter-engine/counter-engine.reducer';
+import { greeting} from './greeting/greeting.reducer'
+import { counterEngine } from './counter-engine/counter-engine.reducer';
+import { combineReducers } from '../utils/combine-reducers';
 
 export const reducer = ({ state, action }) => {
   if (action && !action.type) exception('No action.type provided')
-  if (!state) exception('No state provided')
-  return {
-    greeting: greetingReducer(action, state.greeting),
-    counterEngine: counterEngineReducer(action, state.counterEngine)
-  }
+  return combineReducers(state, action)({
+    greeting,
+    counterEngine
+  })
 }

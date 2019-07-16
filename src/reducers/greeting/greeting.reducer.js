@@ -1,4 +1,4 @@
-export const greetingReducer = (action, state = 'Hello World') =>
+export const greeting = (state = 'Hello World', action) =>
   action &&
     action.type &&
     action.to &&

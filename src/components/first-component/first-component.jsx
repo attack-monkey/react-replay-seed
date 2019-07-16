@@ -16,8 +16,8 @@ export const firstComponent = ({ state }) => {
   )
   return (
     <div>
-      <h1>{state.greeting}</h1>
-      <h2>Counter --> {state.counterEngine.value}</h2>
+      <h1>{state && state.greeting}</h1>
+      <h2>Counter --> {state && state.counterEngine && state.counterEngine.value}</h2>
       <pre>{JSON.stringify(state, null, 2)}</pre>
       <button
         onClick={() => dispatch({ type: 'CHANGE_GREETING', to: 'Sup World' })}

@@ -17,9 +17,9 @@ const stopEngineAndReturnState = value => {
   return { active: false, value }
 }
 
-export const counterEngineReducer = (
-  action,
-  state = { value: 1, active: false }
+export const counterEngine = (
+  state = { value: 1, active: false },
+  action
 ) =>
   action && action.type === 'START_counterEngine'
     ? startEngineAndReturnState(state.value)
