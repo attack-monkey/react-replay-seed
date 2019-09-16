@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { dispatch, goto } from 'react-replay'
+import { dispatch, goto } from '../../../node_modules/react-replay/src'
 
 const counterEngine = (active, greeting) => {
   return greeting === 'Sup World' && !active

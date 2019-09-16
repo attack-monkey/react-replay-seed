@@ -3,5 +3,5 @@ export const greeting = (state = 'Hello World', action) =>
     action.type &&
     action.to &&
     action.type === 'CHANGE_GREETING'
-    ? action.to
-    : state
+      ? action.to
+      : state

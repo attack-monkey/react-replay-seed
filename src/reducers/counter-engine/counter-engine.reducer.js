@@ -1,4 +1,4 @@
-import { dispatch, addSubscription, getSubscription, removeSubscription } from 'react-replay'
+import { dispatch, addSubscription, getSubscription, removeSubscription } from '../../../node_modules/react-replay/src'
 
 const startEngineAndReturnState = value => {
   const counterEngineSubscription = () => { 
@@ -21,10 +21,10 @@ export const counterEngine = (
   state = { value: 1, active: false },
   action
 ) =>
-  action && action.type === 'START_counterEngine'
+  action.type === 'START_counterEngine'
     ? startEngineAndReturnState(state.value)
-    : action && action.type === 'STOP_counterEngine'
+    : action.type === 'STOP_counterEngine'
       ? stopEngineAndReturnState(state.value)
-      : action && action.type === 'INC_counterEngine'
+      : action.type === 'INC_counterEngine'
         ? Object.assign({}, state, { value: state.value + 1 })
         : state
