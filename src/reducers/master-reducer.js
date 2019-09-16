@@ -3,7 +3,7 @@ import { greeting} from './greeting/greeting.reducer'
 import { counterEngine } from './counter-engine/counter-engine.reducer';
 import { combineReducers } from '../utils/combine-reducers';
 
-const initState = {
+export const initState = {
   greeting: 'Heya',
   counterEngine: {
     active: false,
@@ -11,7 +11,7 @@ const initState = {
   }
 }
 
-export const reducer = ({ state = initState, action }) => {
+export const reducer = ({ state, action }) => {
   if (action && !action.type) exception('No action.type provided')
   return combineReducers(state, action)({
     greeting,

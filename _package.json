@@ -1,6 +1,6 @@
 {
   "name": "react-replay-seed",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A Seed Project for React-Replay",
   "main": "index.ts",
   "scripts": {
@@ -26,7 +26,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-replay": "^2.1.0"
+    "react-replay": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
